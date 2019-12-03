@@ -1,7 +1,10 @@
 import { ComponentClass } from 'react';
 import Taro, { Component, Config } from '@tarojs/taro';
-import { View, Text } from '@tarojs/components';
+import { View, Text, Image, Button } from '@tarojs/components';
 import './index.scss';
+// import EXIF from 'exif-js'
+// import ExifParser from 'exif-parser';
+import MyExif from '../../utils/myexif';
 
 // type PageStateProps = {
 //   counter: {
@@ -36,6 +39,11 @@ class Index extends Component {
   config: Config = {
     navigationBarTitleText: '首页'
   };
+  state: {
+    imgUrl: '';
+    imgInfo: '';
+  };
+
   componentWillMount() {}
 
   componentWillReceiveProps(nextProps) {
@@ -50,11 +58,55 @@ class Index extends Component {
 
   componentDidHide() {}
 
+  onUploadImgs() {
+    const _this = this;
+
+    Taro.chooseImage({
+      count: 100,
+      sizeType: ['original'],
+      sourceType: ['album'],
+      success(res) {
+        const array = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0]);
+        const r = MyExif.handleBinaryFile(array);
+        _this.setState({
+          imgInfo: r
+        });
+
+        console.log('img info', r);
+      }
+    });
+  }
+
+  mapObjectKey(obj) {
+    let arr = [];
+    for (let key in obj) {
+      //console.log(key + '---' + obj[key]);
+      const val = key + ': ' + obj[key];
+      arr.push(val);
+    }
+    return arr;
+  }
+
   render() {
     return (
       <View className="index">
         <View>
-          <Text>Hello, World</Text>
+          <Image id="imgId" src={this.state.imgUrl} />
+          <Button onClick={this.onUploadImgs}>add image </Button>
+
+          <View>
+            {this.state.imgInfo &&
+              this.mapObjectKey(this.state.imgInfo.data).map((item, index) => {
+                return <View>{item}</View>;
+              })}
+          </View>
+          <View>--------------------------------------</View>
+          <View>
+            {this.state.imgInfo &&
+              this.mapObjectKey(this.state.imgInfo.iptcdata).map((item, index) => {
+                return <View>{item}</View>;
+              })}
+          </View>
         </View>
       </View>
     );
