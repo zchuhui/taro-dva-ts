@@ -3,7 +3,6 @@ import { ComponentClass } from 'react';
 import { View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import './index.scss';
-import TabBar from '../../components/TabBar';
 
 type PageState = {};
 interface PageDvaProps {
@@ -26,12 +25,7 @@ class Account extends Component<IProps, {}> {
   componentDidMount() {}
   render() {
     const {} = this.props;
-    return (
-      <View className="account-page">
-        account
-        <TabBar current={2} />
-      </View>
-    );
+    return <View className="account-page">account</View>;
   }
 }
 export default Account as ComponentClass<PageOwnProps, PageState>;

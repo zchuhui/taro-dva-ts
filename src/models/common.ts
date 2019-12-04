@@ -4,17 +4,15 @@ export default {
   namespace: 'common',
   state: {
     accessToken: Taro.getStorageSync('accessToken'),
-    userInfo: Taro.getStorageSync('userInfo')
+    userInfo: Taro.getStorageSync('userInfo'),
+    homeIndex: 0
   },
 
-  effects: {
-
-  },
+  effects: {},
 
   reducers: {
     save(state, { payload }) {
       return { ...state, ...payload };
-    },
-  },
-
+    }
+  }
 };
