@@ -1,0 +1,37 @@
+@import '../static/iconfont/iconfont';
+
+.tabbar-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #eee;
+
+  .tabbar-box {
+    text-align: center;
+    // background-color: #eee;
+    width: 80px;
+    height: 80px;
+  }
+
+  .tabbar-active {
+    font-weight: bold;
+  }
+
+  .tabbar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+    font-size: 20px;
+  }
+
+  .iconfont {
+    font-size: 46px;
+    margin-bottom: 5px;
+  }
+}

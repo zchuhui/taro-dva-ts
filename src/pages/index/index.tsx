@@ -2,31 +2,33 @@ import { ComponentClass } from 'react';
 import Taro, { Component, Config } from '@tarojs/taro';
 import { View, Text, Image, Button } from '@tarojs/components';
 import './index.scss';
-// import EXIF from 'exif-js'
-// import ExifParser from 'exif-parser';
 import MyExif from '../../utils/myexif';
+import TabBar from '../../components/TabBar';
 
-// type PageStateProps = {
-//   counter: {
-//     num: number
-//   }
-// }
+type PageStateProps = {
+  counter: {
+    num: number;
+  };
+};
 
-// type PageDispatchProps = {
-//   add: () => void
-//   dec: () => void
-//   asyncAdd: () => any
-// }
+type PageDispatchProps = {
+  add: () => void;
+  dec: () => void;
+  asyncAdd: () => any;
+};
 
-// type PageOwnProps = {}
+type PageOwnProps = {};
 
-// type PageState = {}
+type PageState = {
+  imgUrl: string;
+  imgInfo: boolean;
+};
 
-// type IProps = PageStateProps & PageDispatchProps & PageOwnProps
+type IProps = PageStateProps & PageDispatchProps & PageOwnProps & PageState;
 
-// interface Index {
-//   props: IProps;
-// }
+interface Index {
+  props: IProps;
+}
 
 class Index extends Component {
   /**
@@ -37,7 +39,7 @@ class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: 'Tooo'
   };
   state: {
     imgUrl: '';
@@ -66,7 +68,7 @@ class Index extends Component {
       sizeType: ['original'],
       sourceType: ['album'],
       success(res) {
-        const array = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0]);
+        const array = Taro.getFileSystemManager().readFileSync(res.tempFilePaths[0]);
         const r = MyExif.handleBinaryFile(array);
         _this.setState({
           imgInfo: r
@@ -94,7 +96,7 @@ class Index extends Component {
           <Image id="imgId" src={this.state.imgUrl} />
           <Button onClick={this.onUploadImgs}>add image </Button>
 
-          <View>
+          {/* <View>
             {this.state.imgInfo &&
               this.mapObjectKey(this.state.imgInfo.data).map((item, index) => {
                 return <View>{item}</View>;
@@ -106,8 +108,10 @@ class Index extends Component {
               this.mapObjectKey(this.state.imgInfo.iptcdata).map((item, index) => {
                 return <View>{item}</View>;
               })}
-          </View>
+          </View> */}
         </View>
+
+        <TabBar current={0} />
       </View>
     );
   }
