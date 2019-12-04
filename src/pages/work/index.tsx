@@ -16,22 +16,21 @@ interface PageStateProps {
   // 自己要用的放这
 }
 type IProps = PageStateProps & PageDvaProps & PageOwnProps;
-@connect(({ account, loading }) => ({
-  ...account
+@connect(({ work, loading }) => ({
+  ...work
 }))
-class Account extends Component<IProps, {}> {
+class Work extends Component<IProps, {}> {
   config = {
-    navigationBarTitleText: 'account'
+    navigationBarTitleText: 'work'
   };
   componentDidMount() {}
   render() {
     const {} = this.props;
     return (
-      <View className="account-page">
-        account
-        <TabBar current={2} />
+      <View className="work-page">
+        <TabBar current={1} />
       </View>
     );
   }
 }
-export default Account as ComponentClass<PageOwnProps, PageState>;
+export default Work as ComponentClass<PageOwnProps, PageState>;
