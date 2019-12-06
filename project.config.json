@@ -2,7 +2,7 @@
 	"miniprogramRoot": "./dist",
 	"projectname": "taro-dva-ts",
 	"description": "taro-dva-typescript脚手架",
-	"appid": "touristappid",
+	"appid": "wx6feeb3fcca576d00",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

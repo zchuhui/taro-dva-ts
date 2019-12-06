@@ -39,7 +39,20 @@ class App extends Component {
 
   componentDidMount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    console.log('app DidShow');
+    // 获取用户的当前设置,返回小程序已经向用户请求过的权限
+    // 比如获取信息权限、地理位置权限等
+    Taro.getSetting({
+      success(res) {
+        console.log('getSetting list:', res.authSetting);
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+        //   "scope.userLocation": true
+        // }
+      }
+    });
+  }
 
   componentDidHide() {}
 

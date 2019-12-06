@@ -26,7 +26,7 @@ type PageOwnProps = {
 };
 
 type PageState = {
-  current: number;
+  //current: number;
   // imgUrl: string;
   // imgInfo: boolean;
 };
@@ -40,8 +40,9 @@ interface Index {
   props: IProps;
 }
 
-@connect(({ common, loading }) => ({
-  ...common
+@connect(({ common, loading, account }) => ({
+  ...common,
+  ...account
 }))
 class Index extends Component {
   /**
@@ -56,7 +57,7 @@ class Index extends Component {
   };
 
   state: {
-    current: 0;
+    current: 2;
     // imgUrl: '';
     // imgInfo: '';
   };
@@ -64,16 +65,21 @@ class Index extends Component {
   componentWillMount() {}
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props, nextProps);
+    // console.log(this.props, nextProps);
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    console.log(this.props);
+
+    // 调用登录
+    this.props.dispatch({
+      type: 'common/login'
+    });
+  }
 
   componentDidHide() {}
 
@@ -107,20 +113,13 @@ class Index extends Component {
   // }
 
   onChangeHomeIndex = (num) => {
-    console.log('num', num);
-    // this.props.dispatch({
-    //   type: 'save',
-    //   payload: {
-    //     homeIndex: num,
-    //   }
-    // })
     this.setState({
       current: num
     });
   };
 
   render() {
-    console.log('current ', this.state.current);
+    // console.log('current ', this.state.current);
 
     return (
       <View className="index">

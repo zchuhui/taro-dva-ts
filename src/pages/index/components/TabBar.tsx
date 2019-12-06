@@ -24,7 +24,6 @@ export default class TabBar extends Component<Props, State> {
 
   render() {
     const current = this.props.current;
-    console.log('tabbar current', current);
 
     return (
       <View className="tabbar-wrap">
