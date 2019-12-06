@@ -4,10 +4,10 @@ import { View } from '@tarojs/components';
 interface Props {}
 interface State {}
 
-export default class HomeList extends Component<Props, State> {
+export default class Work extends Component<Props, State> {
   state = {};
 
   render() {
-    return <View className="tabbar-wrap">home list</View>;
+    return <View className="tabbar-wrap">work </View>;
   }
 }

@@ -7,6 +7,7 @@ import './index.scss';
 import TabBar from './components/TabBar';
 import HomeList from './components/HomeList';
 import Me from './components/Me';
+import Work from './components/Work';
 
 type PageStateProps = {
   counter: {
@@ -119,7 +120,7 @@ class Index extends Component {
   };
 
   render() {
-    console.log('homeIndex:', this.state.current);
+    console.log('current ', this.state.current);
 
     return (
       <View className="index">
@@ -143,7 +144,7 @@ class Index extends Component {
         </View>
 
         <View>{this.state.current === undefined || this.state.current === 0 ? <HomeList /> : null}</View>
-        <View>{this.state.current === 1 ? <Me /> : null}</View>
+        <View>{this.state.current === 1 ? <Work /> : null}</View>
         <View>{this.state.current === 2 ? <Me /> : null}</View>
 
         <TabBar current={this.state.current} switchModal={this.onChangeHomeIndex} />
