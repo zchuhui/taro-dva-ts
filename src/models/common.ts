@@ -4,6 +4,7 @@ import * as AuthApi from '../service/authService';
 export default {
   namespace: 'common',
   state: {
+    currentIndex: 0,
     accessToken: Taro.getStorageSync('accessToken'),
     userInfo: Taro.getStorageSync('userInfo')
   },

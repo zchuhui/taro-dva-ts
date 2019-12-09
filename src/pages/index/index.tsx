@@ -10,9 +10,9 @@ import Me from './components/Me';
 import Work from './components/Work';
 
 type PageStateProps = {
-  counter: {
-    num: number;
-  };
+  // counter: {
+  //   num: number;
+  // };
 };
 
 type PageDispatchProps = {
@@ -22,7 +22,8 @@ type PageDispatchProps = {
 };
 
 type PageOwnProps = {
-  homeIndex: Number;
+  currentIndex: Number;
+  userInfo: object;
 };
 
 type PageState = {
@@ -57,7 +58,7 @@ class Index extends Component {
   };
 
   state: {
-    current: 2;
+    current: 0;
     // imgUrl: '';
     // imgInfo: '';
   };
@@ -112,14 +113,20 @@ class Index extends Component {
   //   return arr;
   // }
 
+  /**
+   * 修改导航栏
+   */
   onChangeHomeIndex = (num) => {
-    this.setState({
-      current: num
+    this.props.dispatch({
+      type: 'common/save',
+      payload: {
+        currentIndex: num
+      }
     });
   };
 
   render() {
-    // console.log('current ', this.state.current);
+    const { currentIndex, userInfo } = this.props;
 
     return (
       <View className="index">
@@ -142,11 +149,11 @@ class Index extends Component {
           </View> */}
         </View>
 
-        <View>{this.state.current === undefined || this.state.current === 0 ? <HomeList /> : null}</View>
-        <View>{this.state.current === 1 ? <Work /> : null}</View>
-        <View>{this.state.current === 2 ? <Me /> : null}</View>
+        <View>{currentIndex === 0 ? <HomeList /> : null}</View>
+        <View>{currentIndex === 1 ? <Work userInfo={userInfo} /> : null}</View>
+        <View>{currentIndex === 2 ? <Me userInfo={userInfo} /> : null}</View>
 
-        <TabBar current={this.state.current} switchModal={this.onChangeHomeIndex} />
+        <TabBar current={currentIndex} switchModal={this.onChangeHomeIndex} />
       </View>
     );
   }

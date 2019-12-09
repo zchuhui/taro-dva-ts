@@ -1,7 +1,9 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Button } from '@tarojs/components';
+import { View, Button, CoverImage } from '@tarojs/components';
 
-interface Props {}
+interface Props {
+  userInfo: any;
+}
 interface State {}
 
 export default class Me extends Component<Props, State> {
@@ -27,11 +29,26 @@ export default class Me extends Component<Props, State> {
   };
 
   render() {
+    const { userInfo } = this.props;
+    console.log('userInfo', userInfo);
+
     return (
       <View className="me-wrap">
-        <Button openType="getUserInfo" onClick={this.handleGetUserInfo}>
-          点击获取用户信息
-        </Button>
+        {userInfo == undefined || userInfo == '' ? (
+          <Button openType="getUserInfo" onClick={this.handleGetUserInfo}>
+            点击获取用户信息
+          </Button>
+        ) : null}
+
+        <View
+          style={{
+            padding: '20px',
+            textAlign: 'center'
+          }}
+        >
+          <CoverImage src={userInfo.avatarUrl} style={{ width: '50px', height: '50px', borderRadius: '50%', margin: '30px auto' }} />
+          <View>{userInfo.nickName}</View>
+        </View>
       </View>
     );
   }

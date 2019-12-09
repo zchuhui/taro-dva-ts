@@ -8,6 +8,6 @@ export default class HomeList extends Component<Props, State> {
   state = {};
 
   render() {
-    return <View className="tabbar-wrap">home list</View>;
+    return <View className="home-wrap">home</View>;
   }
 }

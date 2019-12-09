@@ -1,13 +1,15 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View } from '@tarojs/components';
+import { View, CoverImage } from '@tarojs/components';
 
-interface Props {}
+interface Props {
+  userInfo: any;
+}
 interface State {}
 
 export default class Work extends Component<Props, State> {
   state = {};
 
   render() {
-    return <View className="tabbar-wrap">work </View>;
+    return <View className="work-wrap">work</View>;
   }
 }
