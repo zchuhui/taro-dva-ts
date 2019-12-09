@@ -5,6 +5,8 @@ npm tpl 'page-name'
 
 自动从iconfont更新
 npm icon 'iconfont下载链接后缀'
+or
+yarn icon font_1545135_v8qqxbqjk7
 
 # 技术栈
 
