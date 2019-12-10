@@ -129,7 +129,7 @@ class Index extends Component {
     const { currentIndex, userInfo } = this.props;
 
     return (
-      <View className="index">
+      <View className="home-wrap">
         <View>
           {/* <Image id="imgId" src={this.state.imgUrl} />
           <Button onClick={this.onUploadImgs}>add image </Button> */}
