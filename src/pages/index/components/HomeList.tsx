@@ -31,7 +31,12 @@ export default class HomeList extends Component<Props, State> {
       <View className="activity-wrap">
         {this.state.list.map((item, index) => {
           return (
-            <View className="activity-item">
+            <View
+              className="activity-item"
+              onClick={() => {
+                Taro.navigateTo({ url: `/pages/activity/index?id=${item}` });
+              }}
+            >
               <View className="activity-top">
                 <View className="userinfo">
                   <View

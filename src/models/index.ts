@@ -1,6 +1,6 @@
 import accountModel from './accountModel';
-import indexTepModel from './indexTepModel';
+import activityModel from './activityModel';
 import workModel from './workModel';
 import common from './common';
 
-export default [accountModel, indexTepModel, common];
+export default [accountModel, activityModel, workModel, common];

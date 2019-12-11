@@ -1,6 +1,6 @@
 import * as Api from '../service/apiService';
 export default {
-  namespace: 'indexTep',
+  namespace: 'activity',
   state: {},
   effects: {
     *load({ payload }, { call, put }) {

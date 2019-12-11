@@ -15,17 +15,17 @@ interface PageStateProps {
   // 自己要用的放这
 }
 type IProps = PageStateProps & PageDvaProps & PageOwnProps;
-@connect(({ indexTep, loading }) => ({
-  ...indexTep
+@connect(({ activity, loading }) => ({
+  ...activity
 }))
-class Indextep extends Component<IProps, {}> {
+class Activity extends Component<IProps, {}> {
   config = {
-    navigationBarTitleText: 'indexTep'
+    navigationBarTitleText: 'activity'
   };
   componentDidMount() {}
   render() {
     const {} = this.props;
-    return <View className="indexTep-page">indexTep</View>;
+    return <View className="activity-page">activity</View>;
   }
 }
-export default Indextep as ComponentClass<PageOwnProps, PageState>;
+export default Activity as ComponentClass<PageOwnProps, PageState>;
