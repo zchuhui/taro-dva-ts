@@ -90,3 +90,8 @@ $tag-dark: #555 !default;
   display: flex;
   justify-content: $type;
 }
+
+@font-face {
+  font-family: 'NeusaNextStd-Bold';
+  src: url('../font/NeusaNextStd-Bold.otf');
+}

@@ -60,7 +60,7 @@ export default class HomeList extends Component<Props, State> {
                 <View className="info-wrap">
                   <View className="info">
                     <View className="km">10.8 KM 4000 A.S.L </View>
-                    <View className="title">西藏雪山一日游路线分享</View>
+                    <View className="title">西藏雪山一日游路线分享 10.8 KM</View>
                   </View>
                 </View>
               </View>
