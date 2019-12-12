@@ -1,3 +1,45 @@
 @import '../../static/css/mixin';
-.indexTep-page {
+.activity-wrap {
+  padding: 30px;
+
+  .act-data {
+    display: flex;
+    justify-content: space-between;
+
+    .data {
+      font-size: 40px;
+      font-style: oblique;
+      font-weight: bold;
+
+      text {
+        font-size: 20px;
+      }
+    }
+
+    .desc {
+      font-size: 20px;
+    }
+  }
+
+  .act-video {
+    padding: 5px;
+    margin-top: 30px;
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+
+  .act-map {
+    padding: 5px;
+    margin-top: 30px;
+
+    map {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
 }
