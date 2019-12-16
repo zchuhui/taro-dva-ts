@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { ComponentClass } from 'react';
-import { View } from '@tarojs/components';
+import { View, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import './index.scss';
 
@@ -25,7 +25,11 @@ class Work extends Component<IProps, {}> {
   componentDidMount() {}
   render() {
     const {} = this.props;
-    return <View className="work-page"></View>;
+    return (
+      <View className="work-page">
+        <Button className="btn-setup">设置您的运动数据来源</Button>
+      </View>
+    );
   }
 }
 export default Work as ComponentClass<PageOwnProps, PageState>;
