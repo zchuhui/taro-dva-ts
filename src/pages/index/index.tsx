@@ -149,8 +149,8 @@ class Index extends Component {
           </View> */}
         </View>
 
-        <View>{currentIndex === 0 ? <HomeList /> : null}</View>
-        <View>{currentIndex === 1 ? <Work userInfo={userInfo} /> : null}</View>
+        <View>{currentIndex === 1 ? <HomeList /> : null}</View>
+        <View>{currentIndex === 0 ? <Work userInfo={userInfo} /> : null}</View>
         <View>{currentIndex === 2 ? <Me userInfo={userInfo} /> : null}</View>
 
         <TabBar current={currentIndex} switchModal={this.onChangeHomeIndex} />
