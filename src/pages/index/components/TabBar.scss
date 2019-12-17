@@ -28,7 +28,6 @@
     text-align: center;
     width: 80px;
     height: 80px;
-    // background-color: yellow;
 
     .home {
       background-image: url('../../../static/images/home.png');
@@ -61,8 +60,9 @@
 
   .iconfont {
     display: flex;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-size: 100%;
+    background-repeat: no-repeat;
   }
 }

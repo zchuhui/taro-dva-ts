@@ -21,7 +21,7 @@ export default class Work extends Component<Props, State> {
           设置您的运动数据来源
         </Button>
 
-        <WebView src="http://10.1.8.205:8000"></WebView>
+        {/* <WebView src="http://10.1.8.205:8000"></WebView> */}
       </View>
     );
   }
