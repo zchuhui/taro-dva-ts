@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View } from '@tarojs/components';
+import { View, CoverImage } from '@tarojs/components';
 import './HomeList.scss';
+import IconPlay from '../../../static/images/icon-play.png';
 
 interface Props {}
 interface State {}
@@ -37,35 +38,38 @@ export default class HomeList extends Component<Props, State> {
                 Taro.navigateTo({ url: `/pages/activity/index?id=${item}` });
               }}
             >
+              <View className="activity-content" style={{ backgroundImage: `url(${this.state.images[index]})` }}>
+                <View className="info-wrap">
+                  <View className="btn-play">
+                    <CoverImage src={IconPlay} />
+                  </View>
+                  <View className="info">
+                    <View className="title">西藏雪山一日游路线分享</View>
+                    <View className="km">徒步 10.8 公里 </View>
+                  </View>
+                </View>
+              </View>
+
               <View className="activity-top">
                 <View className="userinfo">
                   <View
                     className="avatar"
                     style={{ backgroundImage: `url(${'https://pic2.superbed.cn/item/5dee0df31f8f59f4d65947ab.png'})` }}
                   ></View>
-                  <View className="usr">
-                    <View className="name">Klll Zhang</View>
-                    <View className="time">2019.7.20 20:01</View>
-                  </View>
+                  <View className="name">张师傅</View>
                 </View>
                 <View className="more">
                   <View className="i">
                     <View className="icon"></View>
+                    <View className="count">10</View>
                   </View>
                   <View className="i">
-                    <View className="icon"></View> 222
+                    <View className="icon icon-commit"></View>
+                    <View className="count">10</View>
                   </View>
                   <View className="i">
-                    <View className="icon"></View> 1000
-                  </View>
-                </View>
-              </View>
-
-              <View className="activity-content" style={{ backgroundImage: `url(${this.state.images[index]})` }}>
-                <View className="info-wrap">
-                  <View className="info">
-                    <View className="km">10.8 KM 4000 A.S.L </View>
-                    <View className="title">西藏雪山一日游路线分享 10.8 KM</View>
+                    <View className="icon icon-share"></View>
+                    <View className="count">10</View>
                   </View>
                 </View>
               </View>

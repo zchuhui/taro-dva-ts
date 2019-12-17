@@ -1,13 +1,15 @@
 .activity-wrap {
   padding-bottom: 100px;
+  padding-top: 20px;
   background-color: rgb(245, 245, 245);
 
   .activity-item {
     width: 90%;
-    padding: 5%;
-    border-radius: 5px;
+    margin: 5%;
+    border-radius: 40px;
+    overflow: hidden;
     background-color: #fff;
-    margin-top: 10px;
+    margin-top: 10px 30px;
 
     .activity-top {
       display: flex;
@@ -15,41 +17,37 @@
       height: 100px;
 
       .userinfo {
+        display: flex;
+        align-items: center;
         width: 300px;
+        margin-left: 30px;
+        // margin-left:30px;
 
         .avatar {
-          float: left;
-          width: 80px;
-          height: 80px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           background-size: cover;
         }
 
-        .usr {
-          margin-left: 100px;
-
-          .name {
-            font-size: 32px;
-            font-weight: bold;
-            font-style: oblique;
-          }
-
-          .time {
-            color: #999;
-            font-size: 22px;
-          }
+        .name {
+          font-size: 24px;
+          margin-left: 20px;
         }
       }
 
       .more {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: flex-end;
+        width: 70%;
         font-size: 24px;
 
         .i {
+          display: flex;
+          align-items: center;
           text-align: right;
-          height: 60px;
+          height: 100px;
           min-width: 60px;
           line-height: 20px;
           margin-left: 15px;
@@ -59,8 +57,17 @@
           display: inline-block;
           width: 30px;
           height: 30px;
-          background-color: #eee;
-          margin-right: 10px;
+          margin-right: 15px;
+
+          background-image: url('../../../static/images/icon-zan.png');
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+        .icon-commit {
+          background-image: url('../../../static/images/icon-commit.png');
+        }
+        .icon-share {
+          background-image: url('../../../static/images/icon-share.png');
         }
       }
     }
@@ -70,30 +77,37 @@
       height: 400px;
       background-size: cover;
       overflow: hidden;
-      border-radius: 10px;
       background-image: url('../../../static/images/demo-bg.jpg');
 
       .info-wrap {
+        position: relative;
         display: flex;
         align-items: flex-end;
         width: 100%;
         height: 400px;
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+      }
+
+      .btn-play {
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        background-size: 100%;
       }
 
       .info {
         margin: 20px;
-        font-weight: bold;
-
-        .km {
-          // font-family: 'NeusaNextStd-Bold';
-          font-size: 26px;
-          font-style: oblique;
-          color: yellow;
-        }
+        line-height: 36px;
 
         .title {
-          font-size: 36px;
+          font-size: 30px;
+        }
+
+        .km {
+          font-size: 20px;
         }
       }
     }
