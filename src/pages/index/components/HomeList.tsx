@@ -40,9 +40,9 @@ export default class HomeList extends Component<Props, State> {
             >
               <View className="activity-content" style={{ backgroundImage: `url(${this.state.images[index]})` }}>
                 <View className="info-wrap">
-                  <View className="btn-play">
+                  {/* <View className="btn-play">
                     <CoverImage src={IconPlay} />
-                  </View>
+                  </View> */}
                   <View className="info">
                     <View className="title">西藏雪山一日游路线分享</View>
                     <View className="km">徒步 10.8 公里 </View>

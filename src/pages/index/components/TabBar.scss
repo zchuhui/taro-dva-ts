@@ -10,6 +10,7 @@
   left: 0;
   border-top: 1px solid #eee;
   background-color: #fff;
+  z-index: 100;
 
   .tabbar-item {
     display: flex;
@@ -60,8 +61,8 @@
 
   .iconfont {
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-size: 100%;
     background-repeat: no-repeat;
   }
