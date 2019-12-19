@@ -15,20 +15,19 @@ export default class Work extends Component<Props, State> {
     return (
       <View className="work-wrap">
         <View className="work-content">
-          <Button
-            className="btn-setup"
-            // onClick={() => {
-            //   Taro.navigateTo({ url: 'www.baidu.com' });
-            // }}
-          >
+          <Button className="btn-setup">
             设置您的运动数据来源 <View className="icon-add"></View>
           </Button>
 
           <View className="act-types">
-            <View className="item item-run">
+            <View
+              className="item item-run"
+              onClick={() => {
+                Taro.navigateTo({ url: '/pages/work/index' });
+              }}
+            >
               <View className="i-type">
-                {' '}
-                跑步 13 <View className="km">km</View>{' '}
+                跑步 13 <View className="km">km</View>
               </View>
               <View className="i-address"> 美国华盛顿州 · xxxx大峡谷 </View>
               <View className="i-btn">
@@ -36,9 +35,13 @@ export default class Work extends Component<Props, State> {
               </View>
             </View>
 
-            <View className="item item-bike">
+            <View
+              className="item item-bike"
+              onClick={() => {
+                Taro.navigateTo({ url: '/pages/work/index' });
+              }}
+            >
               <View className="i-type">
-                {' '}
                 骑行 13 <View className="km">km</View>
               </View>
               <View className="i-address"> 美国华盛顿州 · xxxx大峡谷 </View>
@@ -47,9 +50,13 @@ export default class Work extends Component<Props, State> {
               </View>
             </View>
 
-            <View className="item item-onfoot">
+            <View
+              className="item item-onfoot"
+              onClick={() => {
+                Taro.navigateTo({ url: '/pages/work/index' });
+              }}
+            >
               <View className="i-type">
-                {' '}
                 徒步 13 <View className="km">km</View>
               </View>
               <View className="i-address"> 美国华盛顿州 · xxxx大峡谷 </View>
