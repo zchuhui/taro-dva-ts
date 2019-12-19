@@ -1,45 +1,221 @@
 @import '../../static/css/mixin';
+
 .activity-wrap {
   padding: 30px;
 
-  .act-data {
-    display: flex;
-    justify-content: space-between;
-
-    .data {
-      font-size: 40px;
-      font-style: oblique;
-      font-weight: bold;
-
-      text {
-        font-size: 20px;
-      }
-    }
-
-    .desc {
-      font-size: 20px;
-    }
-  }
-
   .act-video {
-    padding: 5px;
-    margin-top: 30px;
-
     video {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 40px;
       overflow: hidden;
     }
   }
 
   .act-map {
-    padding: 5px;
+    border-radius: 40px;
+    overflow: hidden;
     margin-top: 30px;
+    background-color: #fff;
 
     map {
       width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
+    }
+
+    .act-data {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 24px;
+      text-align: center;
+      color: #303030;
+      padding: 30px 0;
+
+      .unit {
+        color: #999;
+      }
+
+      .num {
+        font-size: 40px;
+        color: #000;
+        font-weight: bold;
+        font-style: oblique;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .act-imgs {
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 25px;
+
+    .box {
+      border-left: 1px dashed #ccc;
+
+      .activity-date {
+        position: relative;
+        font-size: 24px;
+        color: #303030;
+        padding-left: 15px;
+
+        &:after {
+          position: absolute;
+          left: -5px;
+          top: 10px;
+          content: ' ';
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #ff9600;
+        }
+      }
+
+      .activity-item {
+        border-radius: 40px;
+        overflow: hidden;
+        background-color: #fff;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+
+        .activity-content {
+          color: #fff;
+          height: 400px;
+          background-size: cover;
+          overflow: hidden;
+          background-image: url('../../../static/images/demo-bg.jpg');
+
+          .info-wrap {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            height: 400px;
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+          }
+
+          .btn-play {
+            position: absolute;
+            left: 50%;
+            top: 150px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-size: 100%;
+          }
+
+          .info {
+            margin: 30px;
+            line-height: 36px;
+
+            .title {
+              font-size: 30px;
+            }
+
+            .km {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .commit {
+      display: flex;
+      justify-content: space-between;
+      font-size: 24px;
+      padding-left: 50px;
+      padding-right: 30px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        text-align: right;
+        height: 60px;
+        min-width: 60px;
+        line-height: 20px;
+        margin-left: 15px;
+
+        .icon {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin-right: 15px;
+          background-image: url('../../static/images/icon-zan.png');
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+        .icon-commit {
+          background-image: url('../../static/images/icon-commit.png');
+        }
+        .icon-share {
+          background-image: url('../../static/images/icon-share.png');
+        }
+      }
+    }
+  }
+
+  .act-likes {
+    width: 100%;
+    min-height: 50px;
+    font-size: 24px;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 40px 5px;
+
+    .icon {
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+      background-image: url('../../static/images/icon-zan.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin-right: 20px;
+    }
+
+    .users {
+      margin-left: 50px;
+    }
+
+    text {
+      color: #ff9600;
+    }
+  }
+
+  .act-commit {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 50px;
+    font-size: 24px;
+    padding: 10px 5px;
+
+    .icon {
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+      background-image: url('../../static/images/icon-commit.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin-right: 20px;
+    }
+
+    .commit-list {
+      margin-left: 50px;
+
+      .item {
+        .name {
+          float: left;
+          color: #ff9600;
+        }
+
+        .cnt {
+          margin-left: 50px;
+        }
+      }
     }
   }
 }
