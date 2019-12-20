@@ -7,7 +7,7 @@
 
   .input-wrap {
     min-height: 200px;
-    padding: 50px;
+    padding: 30px 50px;
     background-color: #fff;
     font-size: 30px;
 
@@ -27,5 +27,87 @@
     .act-title text {
       float: left;
     }
+  }
+
+  .image-wrap {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // min-height: 350px;
+    margin-top: 50px;
+
+    .image-list {
+      border-left: 1px dashed #ccc;
+      padding: 20px;
+
+      .item {
+        position: relative;
+        margin-bottom: 20px;
+
+        image {
+          width: 100%;
+          height: 300px;
+        }
+
+        .time {
+          position: relative;
+          font-size: 24px;
+          color: #303030;
+          height: 50px;
+          line-height: 30px;
+          // padding-left: 15px;
+
+          &:after {
+            position: absolute;
+            left: -27px;
+            top: 10px;
+            content: ' ';
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ff9600;
+          }
+        }
+
+        .delete {
+          position: absolute;
+          right: -20px;
+          top: 30px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #fff;
+          background-image: url('../../static/images/delete.png');
+          background-size: 100%;
+          border: 5px solid #fff;
+        }
+      }
+    }
+
+    .btn-upload {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: #999;
+      width: 100%;
+      height: 150px;
+      background-color: #f9f9f9;
+      border: 1px dashed #aaa;
+      margin-top: 50px;
+    }
+  }
+
+  .btn-marker {
+    background-color: #ff9600;
+    color: #fff;
+    border-radius: 20px;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    border: none;
+    font-size: 30px;
+    margin-top: 50px;
   }
 }
