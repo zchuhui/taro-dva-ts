@@ -162,6 +162,14 @@ class Work extends Component<IProps, {}> {
     return imgArray;
   };
 
+  // 删除
+  onDeleteImg = (index) => {
+    const list = this.state.imageList.filter((item, idx) => idx !== index);
+    this.setState({
+      imageList: list
+    });
+  };
+
   render() {
     const {} = this.props;
     const { imageList } = this.state;
@@ -210,7 +218,7 @@ class Work extends Component<IProps, {}> {
                     <View className="item">
                       <View className="time">{i.dateTime}</View>
                       <Image src={i.url} mode="aspectFill" />
-                      <View className="delete"></View>
+                      <View className="delete" onClick={this.onDeleteImg.bind(this, index)}></View>
                     </View>
                   );
                 })}
