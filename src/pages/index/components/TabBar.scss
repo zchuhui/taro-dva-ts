@@ -24,11 +24,13 @@
 
   .tabbar-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     text-align: center;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 70px;
+    color: #999;
 
     .home {
       background-image: url('../../../static/images/home.png');
@@ -45,6 +47,7 @@
 
   .tabbar-active {
     font-weight: bold;
+    color: #333;
 
     .home {
       background-image: url('../../../static/images/home-a.png');
@@ -60,10 +63,12 @@
   }
 
   .iconfont {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    background-size: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background-size: 60%;
+    background-position: center;
     background-repeat: no-repeat;
   }
 }
