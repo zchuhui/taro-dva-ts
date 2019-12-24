@@ -2,6 +2,13 @@
 
 .activity-wrap {
   padding: 30px;
+  padding-bottom: 150px;
+
+  .act-title {
+    font-size: 40px;
+    text-align: center;
+    margin: 30px auto;
+  }
 
   .act-video {
     video {
@@ -216,6 +223,48 @@
           margin-left: 50px;
         }
       }
+    }
+  }
+
+  .input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid #eee;
+
+    .input {
+      width: 70%;
+      // height:60px;
+      background-color: #efefef;
+      border-radius: 10px;
+      margin-left: 20px;
+      padding: 5px;
+    }
+
+    .btn-send {
+      height: 60px;
+      line-height: 60px;
+      font-size: 30px;
+      background-color: #ff9600;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .btn-not {
+      height: 60px;
+      line-height: 60px;
+      font-size: 30px;
+      background-color: #fff;
+      color: #ddd;
+      border-radius: 10px;
+      border: none;
     }
   }
 }

@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { ComponentClass } from 'react';
-import { View, Text, Video, Map } from '@tarojs/components';
+import { View, Text, Video, Map, Input, Textarea, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import './index.scss';
 import IconMe from '../../static/images/me.png';
@@ -73,15 +73,58 @@ class Activity extends Component<IProps, {}> {
       'https://ae01.alicdn.com/kf/Hc960befbbe4248f7a2aed58b548dd051A.jpg',
       'https://pic1.superbed.cn/item/5def3ca41f8f59f4d67856ab.jpg',
       'https://ae01.alicdn.com/kf/Hc960befbbe4248f7a2aed58b548dd051A.jpg'
-    ]
+    ],
+
+    // 评论框
+    isShowInput: false,
+    inputValue: '',
+    isValue: false
   };
 
   componentDidMount() {}
 
+  /**
+   * 输入评论
+   */
+  onInputCommit = (e) => {
+    // console.log('e',e.detail.value)
+
+    const value = e.detail.value;
+
+    this.setState({
+      inputValue: value
+    });
+
+    // 判断是否有输入评论内容
+    if (value !== '') {
+      this.setState({
+        isValue: true
+      });
+    } else {
+      this.setState({
+        isValue: false
+      });
+    }
+  };
+
+  /**
+   * 发送
+   */
+  onSendCommit = () => {
+    Taro.showLoading({ title: '发送中~' });
+
+    setTimeout(() => {
+      Taro.hideLoading();
+    }, 2000);
+  };
+
   render() {
     const {} = this.props;
+    const { inputValue, isValue, isShowInput } = this.state;
+
     return (
       <View className="activity-wrap">
+        <View className="act-title">江西武功山一日游666~~</View>
         <View className="act-video">
           <Video
             src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
@@ -157,7 +200,12 @@ class Activity extends Component<IProps, {}> {
               <View className="icon"></View>
               <Text>3</Text>
             </View>
-            <View className="item">
+            <View
+              className="item"
+              onClick={() => {
+                this.setState({ isShowInput: !isShowInput });
+              }}
+            >
               <View className="icon icon-commit"></View>
               <Text>1</Text>
             </View>
@@ -194,6 +242,29 @@ class Activity extends Component<IProps, {}> {
             </View>
           </View>
         </View>
+
+        {// 是否有评论弹框
+        isShowInput ? (
+          <View className="input-wrap">
+            <Textarea
+              className="input"
+              value={inputValue}
+              style={{
+                padding: '10px'
+              }}
+              adjustPosition={true}
+              placeholder="输入你的高见"
+              fixed={true}
+              cursorSpacing={20}
+              autoHeight={true}
+              onInput={this.onInputCommit.bind(this)}
+            ></Textarea>
+
+            <Button className={`${isValue ? 'btn-send' : 'btn-not'}`} disabled={!isValue} onClick={this.onSendCommit}>
+              发送
+            </Button>
+          </View>
+        ) : null}
       </View>
     );
   }
